@@ -1,6 +1,8 @@
 package com.example.pong;
 
 import javafx.animation.AnimationTimer;
+import java.util.Timer;
+import java.util.TimerTask;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -61,7 +63,7 @@ public class Pong extends Application {
 
 
         BackgroundImage bImage = new BackgroundImage(
-                new Image("https://phonoteka.org/uploads/posts/2021-05/1621725981_11-phonoteka_org-p-fon-doroga-sverkhu-13.png"),
+                new Image("https://psv4.userapi.com/c237131/u225580831/docs/d50/f7c0c6044f1a/doroga.gif?extra=yNW5bsqA7Z2FtKEh3uuhW0NWN4LJosUNdM7Edu_mg2yFt2i8RYoGD5GxZ67LXqswA9azKbt5S08qpMz6HlfK2nLJggoa426dHIf2Gg0myDqG7LlmVCKTrQB1QnWcxfIaCzqLSAj2rASau0dGkJYJjhpU9Q"),
                 BackgroundRepeat.REPEAT,
                 BackgroundRepeat.REPEAT,
                 BackgroundPosition.CENTER,
@@ -107,10 +109,10 @@ public class Pong extends Application {
             public void handle(KeyEvent keyEvent) {
                 String key = keyEvent.getText();
 
-                if(key.equals("a"))
+                if(key.equals("a") && car.getTranslateX()>4 && Auto.over == 1)
                     car.setTranslateX(car.getTranslateX()-20);
 
-                if(key.equals("d"))
+                if(key.equals("d") && car.getTranslateX()<500 && Auto.over == 1)
                     car.setTranslateX(car.getTranslateX()+20);
 
                 if(key.equals(" ")){
