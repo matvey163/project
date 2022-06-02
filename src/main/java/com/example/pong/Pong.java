@@ -107,10 +107,10 @@ public class Pong extends Application {
             public void handle(KeyEvent keyEvent) {
                 String key = keyEvent.getText();
 
-                if(key.equals("a"))
+                if(key.equals("a")&& car.getTranslateX()>4)
                     car.setTranslateX(car.getTranslateX()-20);
 
-                if(key.equals("d"))
+                if(key.equals("d")&& car.getTranslateX()<500)
                     car.setTranslateX(car.getTranslateX()+20);
 
                 if(key.equals(" ")){
