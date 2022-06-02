@@ -116,6 +116,7 @@ public class Pong extends Application {
                     car.setTranslateX(car.getTranslateX()+20);
 
                 if(key.equals(" ")){
+                    Auto.over = 1;
                     Auto.gameOver.setVisible(false);
                     timer.start();
                     car.setTranslateY(300);
