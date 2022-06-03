@@ -1,10 +1,14 @@
 package com.example.pong;
 
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import java.util.Timer;
+
+
+
 import java.util.TimerTask;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -34,12 +38,12 @@ public class Auto extends Pane {
         for(Wall w : Pong.walls){
             if(this.getBoundsInParent().intersects(w.getBoundsInParent())){
                 over = 0;
-                gameOver = new Label("GAME OVER!!!");
-                gameOver.setTranslateY(350); gameOver.setTranslateX(75);
-                gameOver.setFont(new Font(72));
-                gameOver.setTextFill(Color.RED);
+                gameOver = new Label("GAME OVER!!! \n PRESS SPACE \n TO RESTART ");
+               gameOver.setTranslateY(350); gameOver.setTranslateX(75);
+               gameOver.setFont(new Font("Bauhaus 93", 72));
+              gameOver.setTextFill(Color.color(0.1,0.9,0.1));
                 Pong.appRoot.getChildren().addAll(gameOver);
-                imv.setImage(new Image("https://static.tildacdn.com/tild3461-3862-4263-a236-373539326534/ddbc12dba7c5adbcde08.png",300,300,false,true));
+                imv.setImage(new Image("C:\\Users\\matve\\IdeaProjects\\project2\\src\\main\\resources\\com\\example\\pong\\Explosion.png",300,300,false,true));
                 Pong.timer.stop();
             }
         }
